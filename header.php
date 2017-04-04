@@ -28,19 +28,33 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#"><i class="fa fa-spinner fa-pulse fa-fw"></i>
-<span class="sr-only">Loading...</span> NewNews</a> <!-- font awesome icon ligger här -->
+    <a class="navbar-brand" href="<?php echo bloginfo( 'url' ); ?>"><i class="fa fa-spinner fa-pulse fa-fw"></i>
+      <span class="sr-only">Loading...</span> <?php echo bloginfo( 'name' ); ?></a> <!-- font awesome icon ligger här -->
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <?php
+        wp_nav_menu( array(
+          'theme_location' => 'headmenu',
+          'container'      => false,
+          'menu_class'     => 'nav navbar-nav',
+          'fallback_cb'    => '__return_false',
+          'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+          'depth'          => 2,
+          'walker'         => new bootstrap_4_walker_nav_menu()
+          ) );
+          ?>
+
+          <?php get_template_part('navbar-search'); ?>
+    <!-- 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <button class="btn btn-outline-success" type="button"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></button>
+         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-outline-success" type="button"><a class="nav-link" href="#">sample</a></button>
+          <a class="nav-link" href="#">sample</a>
         </li>
         <li class="nav-item">
-          <button class="btn btn-outline-success" type="button"><a class="nav-link disabled" href="#">Disabled</a></button>
+          <a class="nav-link disabled" href="#">Disabled</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -50,6 +64,6 @@
             <a class="dropdown-item" href="#">out</a>
           </div>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </nav>

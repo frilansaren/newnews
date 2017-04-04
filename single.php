@@ -1,4 +1,4 @@
-<?php
+<?php 
 get_header();
 ?>
 
@@ -16,9 +16,9 @@ get_header();
 					_e( 'Sorry, no posts matched your criteria.', 'newnews' );
 				endif;
 				?>
-				</div><!-- /col-md-4 -->
-			</div><!-- /row -->
-		</div><!-- /container -->
+			</div><!-- /col-md-4 -->
+		</div><!-- /row -->
+	</div><!-- /container -->
 
-		<?php
-		get_footer();
+	<?php
+	get_footer();
