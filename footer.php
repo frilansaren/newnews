@@ -1,12 +1,10 @@
 
-<hr>
-
-<footer>
-	<p>&copy; Ph 2017</p>
-</footer>
-
 </div><!--/.container-->
 
+<footer class="site-footer">
+<hr>
+	<p>&copy; Ph 2017</p>
+</footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -16,6 +14,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/offcanvas.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/search-button.js"></script>
 </body>
 </html>
 

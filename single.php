@@ -3,8 +3,8 @@ get_header();
 ?>
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-8">
+	<div class="row justify-content-md-center">
+		<div class="col-md-9">
 
 			<?php
 			if ( have_posts() ) : 

@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>new news</title>
+  <title>New News</title>
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -45,25 +45,5 @@
           ?>
 
           <?php get_template_part('navbar-search'); ?>
-    <!-- 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">sample</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Get</a>
-            <a class="dropdown-item" href="#">the fuck</a>
-            <a class="dropdown-item" href="#">out</a>
-          </div>
-        </li>
-      </ul> -->
     </div>
   </nav>
