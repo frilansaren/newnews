@@ -6,7 +6,7 @@ $(function() {
 		if( $("#searchform").is(":visible") ) {
 			$("#searchform").submit();
 		} else {
-			search.toggle();
+			search.animate({width: 'toggle'}, 500);
 		}
 	});
 });

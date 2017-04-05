@@ -17,6 +17,7 @@ get_header();
         ?>
         <div class="jumbotron">
         <h1><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php the_title(); ?> </a></h1>
+        <?php the_category( " ") ; ?>
         <p><?php the_excerpt(); ?></p>
       </div>
       <div class="row">
@@ -26,8 +27,9 @@ get_header();
         ?>
         <div class="col-6 col-lg-6">
           <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php the_title(); ?> </a></h2>
+          <?php the_category( " ") ; ?>
           <p><?php the_excerpt(); ?></p>
-          <p><a class="btn btn-secondary" href="<?php the_permalink(); ?>" role="button">View details &raquo;</a></p>
+          <p><a class="readmore" href="<?php the_permalink(); ?>" role="button">Read more &raquo; &raquo;</a></p>
         </div><!--/span-->
         <?php
         }
@@ -35,8 +37,9 @@ get_header();
           ?>
         <div class="col-6 col-lg-4">
           <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php the_title(); ?> </a></h2>
+          <?php the_category( " ") ; ?>
           <p><?php the_excerpt(); ?></p>
-          <p><a class="btn btn-secondary" href="<?php the_permalink(); ?>" role="button">View details &raquo;</a></p>
+          <p><a class="readmore" href="<?php the_permalink(); ?>" role="button">Read more &raquo; &raquo;</a></p>
         </div><!--/span-->
         <?php
         }

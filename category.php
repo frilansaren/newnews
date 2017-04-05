@@ -12,17 +12,18 @@ get_header();
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 			?>
 			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"> <?php the_title(); ?> </a></h2>
-			<?php
+			<?php 
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			}
 			?>
 			<div class="post-meta">
-				Author: <?php the_author(); ?> | Created: <?php the_date(); ?>
+				Author: <?php the_author(); ?> | Created: <?php the_time('D j F Y'); ?>
 			</div>
 			<?php
 			the_excerpt();
 			?>
+			<p><a class="readmore" href="<?php the_permalink(); ?>" role="button">Read more &raquo; &raquo;</a></p>
 			<hr>
 			<?php
 			endwhile;

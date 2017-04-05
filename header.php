@@ -5,22 +5,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
 
   <title>New News</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- Custom styles for this template -->
-  <link href="<?php echo get_template_directory_uri(); ?>/offcanvas.css" rel="stylesheet">
-  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/site.css" rel="stylesheet">
+  <?php wp_head(); ?>
 </head>
+
 
 <body>
 

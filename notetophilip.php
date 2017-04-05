@@ -1,10 +1,10 @@
-<!-- Fixa search knappen
+<!-- Fixa search knappen----
 Ta reda på vad som behövs mer på förstasidan
 Fixa resten av sidorna
 Stylea
 Kommentera alla filer
-Fråga Pontus hur man lägger in category i sin post så man kan komma in i category filen
-Fixa så man ser begränsat med text i search och category
+Fråga Pontus hur man lägger in category i sin post så man kan komma in i category filen----
+Fixa så man ser begränsat med text i search och category----
 
 _____________________________________________________________
 
