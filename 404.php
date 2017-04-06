@@ -14,10 +14,10 @@ get_header(); ?>
 				<p><?php _e( 'This is somewhat embarrassing, isn’t it?', 'newnews' ); ?></p>
 				
 
-			</div><!-- .page-content -->
-		</div><!-- .page-wrapper -->
+			</div><!-- page-content -->
+		</div><!-- page-wrapper -->
 
-	</div><!-- #content -->
-</div><!-- #primary -->
+	</div><!-- content -->
+</div><!-- primary -->
 
 <?php get_footer(); ?>

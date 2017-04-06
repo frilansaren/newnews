@@ -4,12 +4,12 @@
 	?>
 
 	<div class="photo float-right">
-	<?php
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail('post-feature-image');
-	}
-	?>
-	</div>
+		<?php
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail('post-feature-image');
+		}
+		?>
+	</div> <!-- photo -->
 	<div class="post-meta">
 		Author: <?php the_author(); ?> | Created: <?php the_date(); ?>
-	</div>
+	</div> <!-- post-meta -->

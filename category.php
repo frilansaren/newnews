@@ -19,11 +19,10 @@ get_header();
 			?>
 			<div class="post-meta">
 				Author: <?php the_author(); ?> | Created: <?php the_time('D j F Y'); ?>
-			</div>
+			</div> <!-- post-meta -->
 			<?php
 			the_excerpt();
 			?>
-			<p><a class="readmore" href="<?php the_permalink(); ?>" role="button">Read more &raquo; &raquo;</a></p>
 			<hr>
 			<?php
 			endwhile;

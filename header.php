@@ -1,5 +1,3 @@
-<!-- fixa knapparna och icon. font awesome -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +6,8 @@
 
   <title>New News</title>
   <?php wp_head(); ?>
-</head>
-
-
+</head><!-- stänger head -->
 <body>
-
   <nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,6 +28,6 @@
           ) );
           ?>
 
-          <?php get_template_part('navbar-search'); ?>
-    </div>
-  </nav>
+          <?php get_template_part('templates/navbar-search'); ?>
+        </div> <!-- navbar-collapse -->
+  </nav> <!-- navbar -->

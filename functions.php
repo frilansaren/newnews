@@ -9,36 +9,36 @@ Theme Setup
 */
 function newnewsThemeSetup() {
     // Visa bara adminbar om den inloggade användaren får lov att redigera sidor
-    if( current_user_can('edit_posts') ) {
-        show_admin_bar(true);
-} else {
-    show_admin_bar(false);
-}
+	if( current_user_can('edit_posts') ) {
+		show_admin_bar(true);
+	} else {
+		show_admin_bar(false);
+	}
 
-function newnews_theme_setup() {
-	/* Menu registration, låter dig lägga till och ta bort menu från adminmenu */
-	register_nav_menu('headmenu', __('Primary Header Menu', 'newnews'));
-}
-add_action( 'after_setup_theme', 'newnews_theme_setup' );
+	function newnews_theme_setup() {
+		/* Menu registration, låter dig lägga till och ta bort menu från adminmenu */
+		register_nav_menu('headmenu', __('Primary Header Menu', 'newnews'));
+	}
+	add_action( 'after_setup_theme', 'newnews_theme_setup' );
 
 
-    // Register our menus
-register_nav_menus(
-array(
-    'header-menu' => __( 'Navbar menu' )
-    )
-);
+    // Registrerar vår menu
+	register_nav_menus(
+		array(
+			'header-menu' => __( 'Navbar menu' )
+			)
+		);
 
-    // adding custom image size to our theme
-add_image_size( 'post-feature-image', 700, 9999 );
+    // bestämmer storlek på bilderna
+	add_image_size( 'post-feature-image', 700, 9999 );
 
     // Lägg till stöd för featured images and post thumbnails
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 200, 200, false );
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 200, 200, false );
 
     //
 
-add_theme_support('post-formats', array('quote', 'image'));
+	add_theme_support('post-formats', array('quote', 'image'));
 
 }
 add_action('after_setup_theme', 'newnewsThemeSetup');
@@ -50,27 +50,62 @@ add_action('after_setup_theme', 'newnewsThemeSetup');
 function newnews_widgets_init() {
 
     // Footer sidebar
-    register_sidebar( array(
-        'name'          => 'Footer Area',
-        'id'            => 'footer_area',
-        'before_widget' => '<li class="list-inline-item float-right">',
-        'after_widget'  => '</li>',
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>',
-        ) );
+	register_sidebar( array(
+		'name'          => 'Footer Area',
+		'id'            => 'footer_area',
+		'before_widget' => '<li class="list-inline-item float-right">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		) );
 
     // Right sidebar on the page
-register_sidebar( array(
-    'name'          =>  'Sidebar',
-    'id'            =>  'sidebar',
-    'before_widget' =>  '<div>',
-    'after_wdiget'  =>  '</div>',
-    'before_title'  =>  '<h2>',
-    'after_title'   =>  '</h2>'
-    ) );
+	register_sidebar( array(
+		'name'          =>  'Sidebar',
+		'id'            =>  'sidebar',
+		'before_widget' =>  '<div>',
+		'after_wdiget'  =>  '</div>',
+		'before_title'  =>  '<h2>',
+		'after_title'   =>  '</h2>'
+		) );
+	// contact-sidebar
+	register_sidebar( array(
+		'name'          => 'Contact-Sidebar',
+		'id'            => 'contact-sidebar',
+		'before_widget' => '<li class="list-inline-item float-right">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+		) );
+	// dating-sidebar
+	register_sidebar( array(
+		'name'          =>  'Dating-Sidebar',
+		'id'            =>  'dating-sidebar',
+		'before_widget' =>  '<div>',
+		'after_wdiget'  =>  '</div>',
+		'before_title'  =>  '<h2>',
+		'after_title'   =>  '</h2>'
+		) );
 
 }
 add_action( 'widgets_init', 'newnews_widgets_init' );
+
+// autogenererar en "read more" knapp 
+function new_excerpt_more($more) {
+	global $post;
+	return '<p><a class="readmore" href="' .get_permalink($post->ID). '" role="button">Read more &raquo; &raquo;</a></p>';	
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+// function som gör att vi inte får upp menu val i search 
+function SearchFilter($query) {
+	if ($query->is_search) {
+		$query->set('post_type', 'post');
+	}
+	return $query;
+}
+add_filter('pre_get_posts','SearchFilter');
+
 
 // bestämmer hur många ord som ska visas vid homepage
 function wpdocs_custom_excerpt_length( $length ) {

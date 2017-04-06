@@ -16,18 +16,19 @@
 
 					the_excerpt();
 					?>
-					<p><a class="readmore" href="<?php the_permalink(); ?>" role="button">Read more &raquo; &raquo;</a></p>
+
 					<hr>
+					
 					<?php
 				}
 			} ?>
 
-		</div>
+		</div> <!-- col-md-8 -->
 		<div class="col-md-4">
 			<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-                        <?php dynamic_sidebar( 'sidebar' ); ?>
-                <?php endif; ?>
-        </div>
-	</div>
-</div>
+				<?php dynamic_sidebar( 'sidebar' ); ?>
+			<?php endif; ?>
+		</div><!-- col-md-4 -->
+	</div><!-- row -->
+</div> <!-- container -->
 <?php get_footer(); ?>
